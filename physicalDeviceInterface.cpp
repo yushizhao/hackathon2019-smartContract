@@ -71,8 +71,11 @@ namespace physicalDeviceInterface {
     };
 }
 
-
+// for user/other device sending request to the car
 PLATON_ABI(PDI::request, request);
+// for the car prove its execution
 PLATON_ABI(PDI::prove, prove);
+// for oracle inputs
 PLATON_ABI(PDI::message, message);
+// for user/other device cancel its request
 PLATON_ABI(PDI::cancel, cancel);
