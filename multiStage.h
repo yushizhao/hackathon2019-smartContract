@@ -13,10 +13,6 @@ namespace physicalDeviceInterface {
 
         public:
 
-            void init() {
-                platon::println("init success...");
-            }
-
             void loadId(const int i) {
                 id = i;
                 proof = platon::getState(id+"proof");

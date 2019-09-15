@@ -18,7 +18,7 @@ namespace physicalDeviceInterface {
             void request(const std::string id, const std::string payload, const std::string oracleAddr) {
                 platon::setState(id+"value", platon::getValue());
                 PLATON_EMIT_EVENT(Notify, 0, payload);
-                Oracle.Set(id, oracleAddr);
+                Oracle.set(id, oracleAddr);
                 Stage.setStage(id, false, false, platon::Caller());
             }
 
