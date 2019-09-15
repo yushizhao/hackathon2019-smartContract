@@ -6,9 +6,11 @@ This is the smart contract repo for the project "Driving to Blockchain". This sm
 **This is the gateway bringing physical devices to blockchain smart contract platforms.**
 
 Physical devices, like cars, are already highly informational. We only need
+
 +  An identification held and only held by the car;
 +  A smart contract to transfer value and instructions from the information world to the physical world; 
 +  And a set of oracles to bridge physical world information to the information world. 
+
 Then, we drive on the blockchain.
 
 ### PLATON_ABI(PDI::request, request);
