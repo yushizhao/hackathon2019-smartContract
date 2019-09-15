@@ -2,11 +2,12 @@
 #include <platon/platon.hpp>
 
 namespace physicalDeviceInterface {
-    class multiStage:public platon::Contract
+    class multiStage
     {
         public:
 
             std::string id;
+            std::string sender;
             bool proof;
             bool oracle;
 
@@ -20,25 +21,25 @@ namespace physicalDeviceInterface {
                 id = i;
                 proof = platon::getState(id+"proof");
                 oracle = platon::getState(id+"oracle");
+                sender = platon::getState(id+"sender");
             }
-            void setStage(const int i, const bool p, const bool o) {
+
+            void setStage(const std::string i, const bool p, const bool o, const std::string s) {
                 id = i;
                 proof = p;
                 oracle = o;
-                platon::setState(id+"proof",p);
-                platon::setState(id+"oracle",o);
+                sender = s;
+                platon::setState(id+"proof",proof);
+                platon::setState(id+"oracle",oracle);
+                platon::setState(id+"sender",s);
             }
 
-            void updateProof(const int i, const bool p) {
-                id = i;
-                proof = p;
-                platon::setState(id+"proof",p);
+            void updateProof() {
+                platon::setState(id+"proof",proof);
             }
 
             void updateOracle(const int i, const bool p) {
-                id = i;
-                proof = p;
-                platon::setState(id+"oracle",o);
+                platon::setState(id+"oracle",oracle);
             }
 
             bool verify(const int i) {
@@ -47,6 +48,6 @@ namespace physicalDeviceInterface {
                     return true
                 }
             }
-    }
-
+    };
+}
     
